@@ -204,7 +204,7 @@ const pizza_items = [
       "Spinach",
       "Mozzarella Cheese",
     ],
-    isVegetarian: true,
+    isVegetarian: false,
   },
   {
     id: 14,
