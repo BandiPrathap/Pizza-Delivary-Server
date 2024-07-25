@@ -1,8 +1,9 @@
 {
   "name": "pizza-delivary-server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -19,6 +20,9 @@
     "jsonwebtoken": "^9.0.2",
     "localstorage": "^1.0.1",
     "mongoose": "^8.4.5",
-    "node-localstorage": "^3.0.5"
+    "mysql": "^2.18.1",
+    "mysql2": "^3.10.3",
+    "node-localstorage": "^3.0.5",
+    "nodemailer": "^6.9.14"
   }
 }
