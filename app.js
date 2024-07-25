@@ -2,10 +2,10 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
-const authRoutes = require("../routes/authRoutes");
-const itemRoutes = require("../routes/itemRoutes");
-const verifyToken = require("../middleware/authMiddleware");
-const db = require("../config/db");
+const authRoutes = require("./routes/authRoutes");
+const itemRoutes = require("./routes/itemRoutes");
+const verifyToken = require("./middleware/authMiddleware");
+const db = require("./config/db");
 const serverless = require("serverless-http");
 
 dotenv.config();
