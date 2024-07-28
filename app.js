@@ -22,9 +22,8 @@ app.use("/items", verifyToken, itemRoutes);
 const pizza_items = require("./items");
 const verifyToken = require("./middleware/authMiddleware");
 
-const getItems = (req,verifyToken, res) => {
+const getItems = (req, res) => {
   try {
-    console.log(pizza_items);
     res.json(pizza_items);
   } catch (error) {
     res.json({ message: error });
@@ -43,4 +42,3 @@ app.listen(PORT, (err) => {
 });
 
 
-module.exports.handler = serverless(app);
