@@ -18,6 +18,21 @@ app.use(bodyParser.json());
 app.use("/auth", authRoutes);
 app.use("/items", verifyToken, itemRoutes);
 
+
+const pizza_items = require("./items");
+const verifyToken = require("./middleware/authMiddleware");
+
+const getItems = (req,verifyToken, res) => {
+  try {
+    console.log(pizza_items);
+    res.json(pizza_items);
+  } catch (error) {
+    res.json({ message: error });
+  }
+};
+
+app.get('/pizza',getItems);
+
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, (err) => {
   if (!err) {
