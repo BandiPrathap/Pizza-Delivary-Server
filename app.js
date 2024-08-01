@@ -22,7 +22,6 @@ const pizza_items = require("./items");
 
 const getItems = (req, res) => {
   try {
-    console.log(pizza_items);
     res.json(pizza_items);
   } catch (error) {
     console.error('Error getting items:', error);
@@ -46,5 +45,3 @@ app.listen(PORT, (err) => {
     console.log("Server not created", err);
   }
 });
-
-//module.exports.handler = serverless(app);
