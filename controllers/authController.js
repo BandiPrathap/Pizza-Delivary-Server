@@ -16,7 +16,7 @@ const register = async (req, res) => {
       res.json({ message: "The email address already exists" });
     } else {
       const otp = generateOtp();
-      const otpExpiry = new Date(Date.now() + 15 * 60 * 1000); // 15 minutes from now
+      const otpExpiry = new Date(Date.now() + 15 * 60 * 1000);
 
       await user.createUser({ username, email, password, mobileNo, address, otp, otpExpiry });
       await sendMail(email, "OTP Verification", `Your OTP is ${otp}. It is valid for 15 minutes.`);
@@ -37,8 +37,8 @@ const verifyOtp = async (req, res) => {
 
     if (existingUser) {
       if (existingUser.otp === otp && new Date() < new Date(existingUser.otpExpiry)) {
-        // OTP is correct and not expired
-        await user.updateUserOtp(email, null, null); // Clear OTP and its expiration
+        
+        await user.updateUserOtp(email, null, null);
         res.json({ message: "Email verified successfully" });
       } else {
         res.json({ message: "Invalid or expired OTP" });
